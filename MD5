@@ -1,0 +1,16 @@
+98bdc8b4578577d84cb851d073dab99f *DESCRIPTION
+1e0e2e862c063d8861c4a405f442fbc9 *LICENSE
+e42b01500b2015501ce662cdcacfeefb *NAMESPACE
+3cd097b1f3256851cefffc76f3167cea *R/example.R
+bec21ea1c3234d275dd2b6eb3953e2d4 *R/parser.R
+68d44c89238f312b060b76e8e6134864 *R/renderer.R
+a8c5c2910d42879149247054875181a4 *R/settings.R
+51e5f3897f9709e3f9b4f29eab7ed4f0 *R/utils.R
+b99141e6af5c5757e4d8fea9fbb34bb6 *README.md
+407eeda26eefdda73452771caa73274f *inst/example.Rmd
+ca40a161aef15409949387d3567beeef *man/build_example.Rd
+ead5964e9220a55283629158aa2c2872 *man/render.Rd
+8e76195d38d9957be0ec528c36b4fba9 *tests/testthat.R
+4954c611905db1457358b0ced26b7d1b *tests/testthat/test-example.R
+0cdd405705651ea0b0c13bb5f3d4fb34 *tests/testthat/test-parse-render.R
+1bc8d7cd5516e76b39cb741fe636f4c4 *tests/testthat/test-utils.R
