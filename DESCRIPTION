@@ -1,7 +1,7 @@
 Package: tutorial
 Type: Package
 Title: Convert R Markdown Files to DataCamp Light HTML Files
-Version: 0.2.1
+Version: 0.2.2
 Author: Filip Schouwenaars
 Maintainer: Filip Schouwenaars <filip@datacamp.com>
 URL: https://github.com/datacamp/tutorial
@@ -14,8 +14,10 @@ License: MIT + file LICENSE
 LazyData: TRUE
 Imports: markdown, rmarkdown
 Suggests: testthat
+SystemRequirements: pandoc (>= 1.12.3) -
+        http://johnmacfarlane.net/pandoc
 RoxygenNote: 5.0.1
 NeedsCompilation: no
-Packaged: 2016-03-14 13:49:32 UTC; filip
+Packaged: 2016-03-15 09:15:45 UTC; filip
 Repository: CRAN
-Date/Publication: 2016-03-14 15:23:56
+Date/Publication: 2016-03-15 10:52:01
