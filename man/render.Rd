@@ -4,14 +4,19 @@
 \alias{render}
 \title{Create DataCamp Light readable HTML file}
 \usage{
-render(input, open = TRUE, ...)
+render(input, open = TRUE, quiet = FALSE, ...)
 }
 \arguments{
 \item{input}{path to .Rmd file that you want to convert.}
 
 \item{open}{whether or not to open the resulting HTML file in your default browser (default is TRUE)}
 
+\item{quiet}{hide status messages while building the HTML file?}
+
 \item{...}{Other arguments that are passed to \code{rmarkdown::render}.}
+}
+\value{
+file name of the output file
 }
 \description{
 Wrapper around \code{rmarkdown::render} function, that converts
