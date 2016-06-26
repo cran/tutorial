@@ -1,3 +1,7 @@
+allowed_elements <- c("pre-exercise-code", "sample-code", "solution", "sct", "hint")
+required_elements <- c("sample-code")
+project_alias <- "DataCamp Light"
+
 cpaste <- function(x) {
   paste(x, collapse = "\n")
 }
@@ -26,21 +30,36 @@ to_html <- function(x) {
   html
 }
 
-check_output_format <- function(file) {
-  output_format <- try(rmarkdown::all_output_formats(file))
-  if (is.null(output_format)) output_format <- "html_document"
-  if (inherits(output_format, "try-error")) {
-    file.remove(file)
-    stop("Make sure the YAML header contains no errors. Beware of erroneous indentation.")
+tutorial_accessors <- function() {
+  dc_data <- list()
+
+  get = function(name) {
+    if (missing(name)) {
+      dc_data
+    } else {
+      dc_data[[name]]
+    }
   }
-  if (!grepl("html_", output_format)) {
-    file.remove(file)
-    stop("Make sure to specify an HTML output format in the YAML header of your Markdown file.")
+
+  set = function(...) {
+    dots = list(...)
+    dc_data <<- merge(dots)
+    invisible(NULL)
   }
+
+  clear = function() {
+    dc_data <<- list()
+    invisible(NULL)
+  }
+
+  merge = function(values) merge_list(dc_data, values)
+
+  list(get = get, set = set, clear = clear)
 }
 
-msg <- function(msg, quiet) {
-  if (is.logical(quiet) && !quiet) {
-    message(msg)
-  }
+merge_list = function(x, y) {
+  x[names(y)] = y
+  x
 }
+
+tutorial <- tutorial_accessors()
