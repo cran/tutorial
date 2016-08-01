@@ -1,7 +1,7 @@
 Package: tutorial
 Type: Package
 Title: Convert R Markdown Files to DataCamp Light HTML Files
-Version: 0.4.0
+Version: 0.4.1
 Author: Filip Schouwenaars
 Maintainer: Filip Schouwenaars <filip@datacamp.com>
 URL: https://github.com/datacamp/tutorial
@@ -12,6 +12,7 @@ Description: DataCamp Light (<https://github.com/datacamp/datacamp-light>) is a 
   with DataCamp Light readable chunks in the resulting HTML file.
 License: MIT + file LICENSE
 LazyData: TRUE
+Depends: R (>= 3.3.0)
 Imports: markdown, knitr, rjson, base64enc
 Suggests: testthat, rmarkdown
 SystemRequirements: pandoc (>= 1.12.3) -
@@ -19,6 +20,6 @@ SystemRequirements: pandoc (>= 1.12.3) -
 RoxygenNote: 5.0.1
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2016-06-25 17:55:04 UTC; filip
+Packaged: 2016-08-01 09:23:57 UTC; filip
 Repository: CRAN
-Date/Publication: 2016-06-26 09:11:59
+Date/Publication: 2016-08-01 14:40:34
