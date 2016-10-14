@@ -3,6 +3,7 @@
 [![Build Status](https://api.travis-ci.org/datacamp/tutorial.svg?branch=master)](https://travis-ci.org/datacamp/tutorial)
 [![codecov.io](https://codecov.io/github/datacamp/tutorial/coverage.svg?branch=master)](https://codecov.io/github/datacamp/tutorial?branch=master)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/tutorial)](https://cran.r-project.org/package=tutorial)
+[![Rdoc](http://www.rdocumentation.org/badges/version/tutorial)](http://www.rdocumentation.org/packages/tutorial)
 
 `knitr` utility to convert your static code chunks into an R editor where people can experiment. Powered by [DataCamp Light](https://www.github.com/datacamp/datacamp-light), a lightweight version of DataCamp's learning interface.
 
@@ -48,7 +49,9 @@ If you render an R Markdown document like this:
     ---
     title: "Example Document"
     author: "Your name here"
-    output: html_document
+    output:
+      html_document:
+        self_contained: false
     ---
 
     ```{r, include=FALSE}
@@ -66,7 +69,9 @@ If you render an R Markdown document like this:
 
 An HTML file results that features an in-browser R editor with a session attached to it, where you can experiment.
 
-![html_file](https://s3.amazonaws.com/assets.datacamp.com/img/github/content-engineering-repos/tutorial_fiddle.png)
+![html_file](https://s3.amazonaws.com/assets.datacamp.com/img/github/content-engineering-repos/tutorial_fiddle2.png)
+
+Notice that the option `self_contained: false` is used. That way, always the latest version of the DataCamp Light JS library is fetched when the document is opened. If `self_contained: true`, the version of the JS library at 'knit time' is baked into the HTML document. This can cause backwards compatibility issues.
 
 ### Coding challenges
 
@@ -130,7 +135,9 @@ You can also code up Python exercises with `tutorial`:
     ---
     title: "Example Document"
     author: "Your name here"
-    output: html_document
+    output:
+      html_document:
+        self_contained: false
     ---
 
     ```{r, include=FALSE}
@@ -147,8 +154,6 @@ You can also code up Python exercises with `tutorial`:
     ```
 
 ## Other Documentation
-
-
 
 - [Tutorial Basics Vignette](https://cran.r-project.org/package=tutorial): explanation on how to convert your static R code chunks into interactive fiddles or exercises, where you can also experiment with DataCamp Light itself.
 - [R Markdown](http://rmarkdown.rstudio.com/) and [knitr](http://yihui.name/knitr/) for dynamic documents with R.
